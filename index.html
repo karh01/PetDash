@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pet Dashboard</title>
+  
+    <link rel="stylesheet" href="styles.css">
+	<link rel="stylesheet" href="https://code.jquery.com/ui/1.14.1/themes/base/jquery-ui.css">
+
+    <script src="https://code.jquery.com/jquery-3.7.1.js" ></script>
+	<script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js" ></script>
+	<script src="script.js" defer></script>
+</head>
+<body>
+  	<!-- Navigation Bar -->
+	<header>
+		<nav class="navbar">
+			<p class="navbar-title">PetDash</p>
+			<ul>
+				<li><a href="index.html">Dashboard</a></li>
+				<li><a href="#calendar">Calendar</a></li>
+				<li><a href="#facts">Facts</a></li>
+			</ul>
+		</nav>
+	</header>
+
+  <!-- Dashboard Section -->
+	<main>
+		<section id="dashboard" class="section">
+			<h1>🐾 Pet Dashboard 🐾</h1>
+			<div id="dashboard-content">
+				<p><b>Welcome to your pet dashboard! Here you can enter your pets information, add events or tasks in your calender and learn some new facts!</b></p>
+                <p><em>"Dogs are not our whole life, but they make our lives whole." - Roger Caras</em></p>
+				<p id="dashboard-placeholder">Please add your pet's information to get started.</p>
+			</div>
+			<button id="edit-btn">Add Pet Information</button>
+
+			<!-- Pet Information Form -->
+			<form id="pet-form" style="display: none;">
+				<h3>Pet Information</h3>
+					<label for="pet-name">Name:</label>
+					<input type="text" id="pet-name" required>
+
+					<label for="pet-age">Age:</label>
+					<input type="number" id="pet-age" required>
+
+					<fieldset id="gender-group">
+						<legend>Gender:</legend>
+						<label for="male">Male</label>
+						<input type="radio" name="pet-gender" id="male" value="Male">
+						<label for="female">Female</label>
+						<input type="radio" name="pet-gender" id="female" value="Female">
+					</fieldset><br>
+
+					<label for="pet-medical">Medication:</label>
+					<input type="text" id="pet-medical">
+
+					<label for="pet-birthday">Birthday:</label>
+					<input type="date" id="pet-birthday">
+
+					<button type="submit">Save</button>
+			</form>
+		</section>
+
+		<!-- Calendar Section -->
+		<section id="calendar-container" class="section">
+			<h2>🐾 Calender 🐾</h2>
+			<p>Click on a day and add your events / tasks so you never forget them!</p>
+			<aside id="calendar-header">
+				<button id="prev-month">‹</button>
+				<h2 id="month-name">Month</h2>
+				<button id="next-month">›</button>
+			</aside>
+			<div id="calendar"></div>
+		</section>
+
+		<!-- Facts Section -->
+		<section id="facts" class="section">
+			<h2>🐾 Facts and More! 🐾</h2>
+			<div id="facts-container">
+				<h3>Dog Facts</h3>
+				<ul id="facts-list">
+				<!-- Facts will be appended here -->
+				</ul>
+				<button id="fetch-facts-btn">Load More Facts</button>
+			</div>
+			
+			<div id="container">
+				<img src="images/AdobeStock_211517960.jpeg" width="400"  alt="Great Dane jumping outside to catch a ball in a green grassy feild.">
+				<img src="images/AdobeStock_221960862.jpeg" width="400"  alt="Dog layinf in a bed of flowers and grass.">
+				<img src="images/AdobeStock_810663391.jpeg" width="400"  alt="Doodle wearing sunglasses.">
+
+				<a id="previous" href="#">Previous</a>
+				<a id="next" href="#">Next</a>
+			</div>
+
+            <div id="dog-training">
+                <h4>Dog Training Tips</h4>
+                <p>Training your dog is an essential part of building a happy and healthy relationship. Here are some quick tips:</p>
+                <ul>
+                    <li><strong>Start Early:</strong> Begin training as soon as you bring your dog home. Puppies learn quickly!</li>
+                    <li><strong>Use Positive Reinforcement:</strong> Reward good behavior with treats, praise, or playtime.</li>
+                    <li><strong>Be Consistent:</strong> Use the same commands and routines to avoid confusing your dog.</li>
+                    <li><strong>Socialize Your Dog:</strong> Expose them to different people, environments, and other animals.</li>
+                    <li><strong>Patience is Key:</strong> Training takes time and effort. Stay calm and persistent.</li>
+                </ul>
+                <p>Remember, a well-trained dog is a happy dog!</p>
+                <p>Enjoy this fun video My German Shepherd and I made after he completed his training.</p>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/KJV9d0wGXWM?si=zuRFz2bcDOjKv2zN&start=1" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+
+			<article id="dog-quiz">
+				<h3>Test Your Dog Knowledge!</h3>
+					<form id="quiz-form" title="quiz-title">
+						<fieldset>
+								<legend id="quiz-title">Dog Knowledge Quiz</legend>
+								<div>
+									<label>1. What is the fastest dog breed?</label>
+										<ul id="quiz-options-1">
+											<li>
+												<input type="radio" id="q1-a1" name="q1" value="Greyhound">
+												<label>Greyhound</label>
+											</li>
+											<li>
+												<input type="radio" id="q1-a2" name="q1" value="Bulldog">
+												<label>Bulldog</label>
+											</li>
+											<li>
+												<input type="radio" id="q1-a3" name="q1" value="Poodle">
+												<label>Poodle</label>
+											</li>
+										</ul>
+								</div>
+
+								<div>
+									<label>2. How many teeth does an adult dog have?</label>
+										<ul id="quiz-options-2">
+											<li>
+												<input type="radio" id="q2-a1" name="q2" value="36">
+												<label>36</label>
+											</li>
+											<li>
+												<input type="radio" id="q2-a2" name="q2" value="42">
+												<label>42</label>
+											</li>
+											<li>
+												<input type="radio" id="q2-a3" name="q2" value="48">
+												<label>48</label>
+											</li>
+										</ul>
+								</div>
+
+								<div>
+									<label>3. What is the most popular dog breed in the US?</label>
+										<ul id="quiz-options-3">
+											<li>
+												<input type="radio" id="q3-a1" name="q3" value="Beagle">
+												<label>Beagle</label>
+											</li>
+											<li>
+												<input type="radio" id="q3-a2" name="q3" value="Labrador Retriever">
+												<label>Labrador Retriever</label>
+											</li>
+											<li>
+												<input type="radio" id="q3-a3" name="q3" value="German Shepherd">
+												<label>German Shepherd</label>
+											</li>
+										</ul>
+								</div>
+						</fieldset>
+						<button type="button" id="submit-quiz-btn">Submit Quiz</button>
+				</form>
+
+				<!-- Quiz Results -->
+				<div id="quiz-results" role="status" aria-live="polite">
+						<h4>Your Results:</h4>
+						<p id="score"></p>
+				</div>
+			</article>
+
+		</section>
+	</main>
+
+    <footer>
+        <p><em>All Rights Reserved &#169; Kiera Harris GIT418 2024</em></p>
+    </footer>
+</body>
+</html>
+
+  <!-- Validator Passes -->
